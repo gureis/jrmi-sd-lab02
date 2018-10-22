@@ -14,7 +14,8 @@ public class Server implements Correio {
 	}
 	
 	private Usuario findUser(String userName) {
-		return userList.stream().filter(lambdaUser -> lambdaUser.getUserName().contains(userName)).findFirst()
+		return userList.stream().filter(lambdaUser -> lambdaUser.getUserName().contains(userName))
+				.findFirst()
 				.orElse(null);
 	}
 
@@ -63,7 +64,6 @@ public class Server implements Correio {
 		
 		try {
             System.setProperty("java.rmi.server.hostname","127.0.0.1");
-			java.rmi.registry.LocateRegistry.createRegistry(1099); //linha necessária apenas para Windows
 
 			//Create and export a remote object
 			Server obj = new Server();
