@@ -15,7 +15,6 @@ public class Client {
 			Registry registry = LocateRegistry.getRegistry(host);
 			Correio stub = (Correio) registry.lookup("Correio");
 			int option;
-			new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 			do {
 				String userName;
 				String psw;
@@ -114,7 +113,6 @@ public class Client {
 				System.out.println("Aperte enter para continuar");
 				input.nextLine();
 				input.nextLine();
-				new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 			} while(option != 0);		
 		}
 		catch (Exception e) {
